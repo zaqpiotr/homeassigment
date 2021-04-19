@@ -1,0 +1,21 @@
+#backend
+
+target
+app.js
+app.js.LICENSE.txt
+productionHallApp.js
+productionHallApp.js.LICENSE.txt
+#frontend
+~
+node_modules
+package-lock.json
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.iml
