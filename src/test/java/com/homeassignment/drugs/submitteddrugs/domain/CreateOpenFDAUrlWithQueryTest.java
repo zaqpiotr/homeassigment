@@ -1,14 +1,24 @@
 package com.homeassignment.drugs.submitteddrugs.domain;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+
 class CreateOpenFDAUrlWithQueryTest {
 
   private CreatSearchForSubmittedDrugUrlWithQuery creatSearchForSubmittedDrugUrlWithQuery = new CreatSearchForSubmittedDrugUrlWithQuery();
 
-  void test() {
+  @Test
+  void testForManufacturerName() {
     //given
-//    SearchForSubmittedDrugsQuery.builder().manufacturerName("roche")
+    SearchForSubmittedDrugsQuery query = SearchForSubmittedDrugsQuery.builder()
+        .manufacturerName("roche").build();
 
-//    createOpenFDAUrlWithQuery.createQuery()
+    //when
+    String result = creatSearchForSubmittedDrugUrlWithQuery.createUrl(query);
+
+    //then
+    Assertions.assertEquals("https://api.fda.gov/drug/drugsfda.json?search=openfda.manufacturer_name:roche", result);
   }
 
 }
